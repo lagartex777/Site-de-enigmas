@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OSINT Enigmas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>OSINT Enigmas</h1>
+    <p>Resolva puzzles usando Morse, Binário, Base64, César e mais.</p>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Como funciona</h2>
+      <ol>
+        <li>Escolha um enigma.</li>
+        <li>Use as ferramentas (decodificadores visíveis) ou sua própria habilidade.</li>
+        <li>Envie a resposta e ganhe pontos. (O seu progresso pode não ser salvo, essa função ainda está em desenvolvimento.)</li>
+      </ol>
+    </section>
+
+    <section id="puzzles">
+      <h2>Enigmas</h2>
+      <div id="puzzle-list"></div>
+    </section>
+
+    <section id="tools">
+      <h2>Ferramentas rápidas</h2>
+      <div class="tool">
+        <label>Morse → Texto</label>
+        <textarea id="morse-input" placeholder="... --- ..."></textarea>
+        <button id="morse-decode">Decodificar Morse</button>
+        <div id="morse-output" class="output"></div>
+      </div>
+
+      <div class="tool">
+        <label>Binário → Texto (8-bit)</label>
+        <textarea id="binary-input" placeholder="01001000 01100101 01101100 01101100 01101111"></textarea>
+        <button id="binary-decode">Decodificar Binário</button>
+        <div id="binary-output" class="output"></div>
+      </div>
+
+      <div class="tool">
+        <label>Base64 → Texto</label>
+        <textarea id="b64-input" placeholder="SGVsbG8="></textarea>
+        <button id="b64-decode">Decodificar Base64</button>
+        <div id="b64-output" class="output"></div>
+      </div>
+
+      <div class="tool">
+        <label>Cifrar/Decifrar César</label>
+        <input id="caesar-shift" type="number" value="3" min="1" max="25"/>
+        <textarea id="caesar-input" placeholder="Texto..."></textarea>
+        <button id="caesar-encode">Aplicar César</button>
+        <div id="caesar-output" class="output"></div>
+      </div>
+    </section>
+
+    <section id="scoreboard">
+      <h2>Progresso</h2>
+      <p>Pontos: <span id="score">0</span></p>
+      <button id="reset-progress">Resetar progresso</button>
+    </section>
+
+    <footer>
+      <p>Gerado para GitHub + Vercel. Leia o README para instruções de deploy.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
